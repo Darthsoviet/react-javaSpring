@@ -1,0 +1,174 @@
+@mixin form-add($color1,$color2,$aceptar,$aceptar-hover,$warnin,$warnin-hover,$letra) {
+
+
+  .form-add-off {
+
+    height: 100%;
+    display: block;
+    align-items: center;
+    padding: 0px;
+    width: 50px;
+    margin: 0px;
+    margin: 1px;
+
+    background: $color2;
+
+    .btn-toggle-off {
+      height: 40px;
+      display: block;
+      background: $color1;
+      width: 100%;
+      border: solid $color1;
+      border-radius: 3px;
+      border-bottom: 2px solid $warnin-hover;
+
+
+    }
+
+
+  }
+
+
+  .form-add {
+
+    width: 250px;
+    height: 100%;
+    display: block;
+    align-items: center;
+    padding: 0px;
+
+    background: $color2;
+
+    .btn-toggle-on {
+
+      height: 40px;
+      display: block;
+      background: $color1;
+      width: 100%;
+      border: inset 1px $color1;
+      border-bottom: 2px outset $color2;
+      
+
+    }
+
+    .form-head {
+
+      width: 100%;
+      height: auto;
+      color: $letra;
+      display: block;
+      text-align: center;
+      align-items: center;
+      background: $color2;
+
+      .fa-box-open {
+        font-size: xx-large;
+      }
+    }
+
+    form {
+      color: $letra;
+      display: block;
+      align-items: center;
+      padding: 10%;
+      margin: 0;
+
+      label {
+        display: block;
+        align-content: center;
+        text-align: center;
+        font-size: larger;
+
+
+      }
+
+      label:hover {
+        display: block;
+        align-content: center;
+        text-align: center;
+        font-size: larger;
+        color: $aceptar;
+
+      }
+
+      input {
+        background: transparent;
+        border: none;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid $letra;
+        margin-bottom: 1px;
+      }
+
+      input:hover {
+        border-bottom: 1px solid $aceptar;
+      }
+      .progreso-des{
+        display: none;
+        color:$warnin-hover;
+        background: $color1;
+        -webkit-appearance: none;
+
+      }
+      input:focus +.progreso-des{
+        display: block;
+      }
+
+      input:hover::placeholder {
+        color: $aceptar;
+      }
+      input:invalid{
+        color: $warnin-hover;border-bottom:solid 1px $warnin-hover;
+      }
+      input:valid{
+        color: $aceptar-hover;
+        border-bottom:solid 1px $aceptar-hover;
+      }
+      .btn-g {
+        height: auto;
+        padding-top: 20px;
+
+        button {
+          display: block;
+          background: transparent;
+          border-radius: 30px;
+          width: 100%;
+          margin: 10px 0px 10px 0px;
+          text-align: center;
+          padding-bottom: 3px;;
+
+        }
+
+        .btn-submit {
+          outline: none;
+          border: solid 1px $aceptar;
+          color: $aceptar;
+        }
+
+        .btn-submit:hover {
+          background: $aceptar;
+          color: $letra;
+          border: $aceptar-hover 2px solid;
+          box-shadow: 2px 2px 5px $aceptar-hover, 2px 2px 5px black;;
+        }
+
+        .btn-reset {
+          outline: none;
+          border: solid 1px $warnin;
+          color: $warnin;
+        }
+
+        .btn-reset:hover {
+          background: $warnin;
+          color: $letra;
+          border: $warnin-hover 2px solid;
+          box-shadow: 2px 2px 5px $warnin-hover,
+          2px 2px 5px black;
+        }
+
+      }
+
+    }
+  }
+
+}

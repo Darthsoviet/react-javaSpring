@@ -1,0 +1,102 @@
+
+@mixin footer($gris,$gris-claro,$gris-oscuro,$dark,$warnin-hover,$letra){
+  footer {
+    
+    height: 100%;
+    width: 100%;
+    grid-area: pie;
+    background: linear-gradient(90grad, $gris, $gris-oscuro, $dark, black);
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+
+    .social {
+      text-align: center;
+      height: 100%;
+
+      h1 {
+        display: block;
+        width: 100%;
+        font-size: xx-large;
+      }
+
+      i {
+        display: block;
+        width: 100%;
+        font-size: xx-large;
+      }
+
+      i:hover {
+        color: #1528ff;
+      }
+
+      p {
+        display: block;
+        width: 100%;
+        font-size: larger;
+        font-family: Arial;
+      }
+
+      p:hover {
+        color: #1528ff;
+      }
+
+
+    }
+
+    .tecnologias {
+      display: block;
+      text-align: center;
+      height: 100%;
+
+      .container-tec {
+        display: grid;
+        height: auto;
+        width: auto;
+        grid-template-columns: 1fr 1fr;
+
+        h4 {
+          display: block;
+          padding: 0;
+          margin: 0;
+        }
+
+        .interno {
+          height: auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+
+          .logos {
+            display: block;
+
+            i {
+
+              display: block;
+              padding: 2px;
+              font-size: x-large;
+            }
+            i:hover{
+              color:$warnin-hover;
+            }
+
+
+          }
+          p{
+            font-size: 8px;
+            padding: 20px;
+          }
+          p:hover{
+            color: $warnin-hover;
+            padding: 5px;
+            font-size: 8px;
+          }
+        }
+      }
+
+    }
+
+
+  }
+
+
+
+}

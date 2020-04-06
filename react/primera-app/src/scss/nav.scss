@@ -1,0 +1,149 @@
+@mixin nav($color1,$color2,$dark,$accept,$letra) {
+
+
+    .nav{
+        display: grid;
+        grid-template-columns: auto 600px;
+        box-shadow: 10px 10px 15px black;
+        height: auto;
+
+        .buttons{
+            display: grid;
+            grid-auto-flow: column;
+
+
+            button{
+                display: inline-block;
+                height: 100%;
+                background: $dark;
+                border: none;
+                border-bottom: #323232 groove 3px; border-right: #323232 ridge 3px;
+
+
+
+            }
+        }
+        .buscador{
+            padding: 5px 20px ;
+            min-width: 300px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            input{
+                text-align: center;
+                 display: inline-block;
+                 background: $dark;
+                 width: 90%;
+                 outline: none;
+                 color: $warnin-hover;
+                 border-radius: 12px;
+                border: $accept solid 1px;
+
+             }
+            input::placeholder{
+                text-align: center;
+                color: $warnin-hover;
+            }
+            input:hover{
+                border: $warnin-hover solid 1px;
+            }
+            input:hover::placeholder{
+                color: transparent;
+            }
+            i{
+                color: $accept;
+                background-color: transparent;
+            }
+            i:hover{
+                color: $warnin-hover;
+
+            }
+            button{
+                border-radius: 100%;
+                width: 30px;
+                display: inline-block;
+                background: $color1;
+                border: $color1 2px solid;
+            }
+            button:hover{
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
+                display: inline-block;
+                background: $dark;
+                border: $warnin-hover 2px solid;
+                color: $warnin-hover;
+            }
+        }
+
+    }
+    @media screen and( max-width: 990px) {
+        .nav {
+            grid-template-columns: 1fr;
+            display: grid;
+            width: auto;
+            height: auto;
+            grid-template-rows: auto auto;
+            box-shadow: 10px 10px 15px black;
+
+            grid-template-areas: "botones botones" "buscador buscador";
+
+            .buttons{
+                width: available;
+                grid-area: botones;
+            }
+            .buscador{
+                grid-area: buscador;
+                width: available;
+
+
+            }
+        }
+    }
+    @media screen and( max-width: 768px) {
+        .nav {
+            display: grid;
+            width: auto;
+            height: auto;
+            grid-template-rows: auto auto;
+            box-shadow: 10px 10px 15px black;
+
+            grid-template-areas: "botones botones" "buscador buscador";
+
+            .buttons{
+                grid-area: botones;
+            }
+            .buscador{
+                grid-area: buscador;
+                width: 100%;
+                padding: 0;
+
+            }
+        }
+    }
+    //ipad pro
+    @media only screen and (width: 1024px)
+    and (height: 1366px){
+        .nav {
+            display: grid;
+            width: auto;
+            height: 50px;
+            grid-template-rows: auto auto;
+            box-shadow: 10px 10px 15px black;
+            grid-template-areas: "botones botones" "buscador buscador";
+
+
+            .buttons{
+                grid-area: botones;
+            }
+            .buscador{
+                grid-area: buscador;
+                width: 100%;
+                padding: 0;
+
+            }
+        }
+    }
+    }
+

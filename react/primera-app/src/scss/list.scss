@@ -1,0 +1,381 @@
+@mixin list($color1, $color2, $color3, $accept,$danger,$very-dark,$letra) {
+
+
+  li {
+    list-style: none;
+    display: block;
+    height: auto;
+
+    width: 100%;
+  }
+
+  .not{
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    display: block;
+    .minimi{
+      display: inline-block;
+    }
+    .serv{
+
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  .lista-grid {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    padding: 15px 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 15px 15px;
+    overflow: auto;
+
+
+
+
+/**Card  */
+    .item-card {
+      min-width: 200px;
+      max-width: 300px;
+      padding: 0px;
+      width: 100%;
+      height: auto;
+      background: $color2;
+      display: block;
+      box-shadow: 5px 5px 6px black;
+    
+
+      .item-card-titulo {
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background-color: $color3;
+        grid-template-columns: 5fr 1fr;
+        display: grid;
+        height: 50px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+
+
+        h1 {
+
+          padding: 10px;
+          
+          word-break: break-all;
+          text-align: center;
+          display: block;
+          color: $accept;
+          font-size: x-large;
+          width: auto;
+          height: 100%;
+          line-height: 35px;
+          text-overflow:ellipsis;
+
+
+
+        }
+
+
+        .item-card-contador {
+
+          text-align: center;
+          width: 100%;
+          height: 100%;
+          display: inline-block;
+
+          font-size: 20px;
+          padding-top: 8px;
+          background: $color2;
+          word-wrap: break-word;
+
+        }
+
+      }
+      .item-card-titulo:hover{
+        height: auto;
+      }
+
+
+      .item-card-id {
+        overflow: hidden;
+
+        background-color: $very-dark;
+
+        display: block;
+        height: 25px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+
+        h1 {
+
+          padding: 5px;
+          margin: 0;
+          text-align: center;
+          display: block;
+          color: $accept;
+          font-size: small;
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+
+
+      .item-card-content {
+        background: $color1;
+
+        display: block;
+        height: 150px;
+        width: 100%;
+        max-width: 100%;
+        padding: 8px;
+        text-align: center;
+
+        word-break: break-word;
+        margin: 0;
+        color: $danger;
+        overflow: auto;
+
+      }
+
+
+
+      .item-card-foot {
+        height: 45px;
+        width: 100%;
+        display: block;
+        padding: 0;
+        border: none;
+        background: black;
+
+
+        .item-card-foot-precio {
+          display: inline-block;
+          text-align: center;
+          height: 100%;
+          width: 50%;
+          color: greenyellow;
+          word-wrap: break-word;
+
+
+          i {
+            color: greenyellow;
+            display: inline-block;
+            padding-top: 10px;
+            text-align: center;
+          }
+
+          p {
+            color: greenyellow;
+            text-align: center;
+            padding-top: 10px;
+            display: inline-block;
+          }
+        }
+
+        .contenedor-mod {
+          display: inline-block;
+          width: 20%;
+          height: 100%;
+          padding: 5px;
+
+          button {
+            width: 100%;
+            height: 95%;
+            background: transparent;
+            border: transparent;
+          }
+        }
+
+        .contenedor-btn {
+          display: inline-block;
+          width: 30%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+
+          button {
+            display: block;
+            width: 100%;
+            height: 95%;
+            background: $danger;
+            border: none;
+
+
+          }
+        }
+
+      }
+
+      .form-mod {
+        align-items: center;
+        border: solid 1px $warnin-hover;
+        text-align: center;
+
+
+        input {
+          background: $very-dark;
+          display: block;
+          width: 100%;
+          border: none;
+          border-bottom: $warnin-hover 1px solid;
+          text-align: center;
+          color: $warnin-hover;
+        }
+
+        input::placeholder {
+          text-align: center;
+          color: $letra;
+        }
+
+        input:hover::placeholder {
+          color: $accept;
+        }
+
+        button {
+          display: block;
+          width: 100%;
+          background: black;
+          border: 2px #adff2f solid;
+          color: greenyellow;
+        }
+
+      }
+
+    }
+
+
+    .item-card:hover {
+
+      box-shadow: 10px 10px 10px black;
+    }
+  }
+  .item-card-loading {
+    min-width: 200px;
+    max-width: 300px;
+    padding: 0px;
+    width: 100%;
+    height: 250px;
+    background:linear-gradient(to right,$color1,$color2,$color3,$color2,$color1);
+    background-size: 300%;
+    animation: brillo 2s linear infinite;
+    display: block;
+    box-shadow: 5px 5px 6px black;
+    
+
+  }
+  @keyframes brillo {
+    0%{
+      background-position: 0%;
+    }100%{
+      background-position: 300%;
+    }
+    
+  }
+
+  @media only screen and (width: 1024px) and (height: 1366px) {
+    .lista-grid {
+      padding: 15px 15px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 15px 15px;
+
+      .item-card {
+        max-width: 300px;
+      }
+
+    }
+  }
+
+  @media only screen and (width: 1366px) and (height: 1024px) {
+    .lista-grid {
+      padding: 15px 15px;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 15px 15px;
+
+      .item-card {
+        max-width: 300px;
+      }
+
+    }
+  }
+
+  @media screen and(max-width: 1200px) {
+    .lista-grid {
+      padding: 15px 15px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 15px 15px;
+
+      .item-card {
+        max-width: 300px;
+      }
+
+    }
+  }
+
+  @media screen and(max-width: 990px) {
+    .lista-grid {
+      padding: 15px 15px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 15px 15px;
+
+    }
+  }
+
+  @media screen and(max-width: 768px) {
+    .lista-grid {
+      padding: 15px 15px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px 15px;
+
+      .item-card {
+
+        max-width: 100%;
+        min-width: 200px;
+
+
+      }
+    }
+  }
+
+  @media screen and(max-width: 580px) {
+    .lista-grid {
+      padding: 15px 15px;
+      grid-template-columns: repeat(1, 1fr);
+
+      grid-gap: 15px 15px;
+
+      .item-card {
+
+        min-width: 200px;
+      }
+
+    }
+  }
+
+  @media screen and(max-width: 411px) {
+    .lista-grid {
+
+      padding: 15px 15px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 15px 15px;
+
+      .item-card {
+        min-width: 200px;
+      }
+    }
+  }
+
+}

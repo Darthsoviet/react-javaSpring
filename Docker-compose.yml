@@ -1,0 +1,105 @@
+version: "3"
+services: 
+
+#Backend spring servers
+    backend-spring1:
+        build:
+            context: "./springrest" 
+        image: "spring:1.0.0"
+        ports: ["8080:8080"]
+        networks: 
+            red1:
+                ipv4_address: "192.168.2.3"
+
+        restart: "always"
+        container_name: "spring1"
+        depends_on: 
+            - "db"
+        environment: 
+            DB_HOST: "192.168.2.2"
+
+
+
+    backend-spring2:
+            build:
+                context: "./springrest" 
+            image: "spring:1.0.0"
+            ports: ["8081:8080"]
+            networks: 
+                red1:
+                    ipv4_address: "192.168.2.4"
+
+            restart: "always"
+            container_name: "spring2"
+            depends_on: 
+                - "db"
+            environment: 
+                DB_HOST: "192.168.2.2"
+#Load balancer
+
+    load-balancer:
+        image: nginx-lb:1.0.0
+        build: 
+            context: "./nginx_loadbalancer"
+        ports: 
+            - "81:80"
+        networks: 
+            red1:
+                ipv4_address:  "192.168.2.5"
+                    
+        depends_on: 
+            - "backend-spring1"
+            - "backend-spring2"
+        container_name: "loadbalancer"
+        restart: "always"
+
+#FRONTEND
+    react:
+        container_name: react
+        image: react:nginx
+        build: 
+            context: ./react
+        ports: 
+            - "80:80"
+        networks: 
+             red1:
+                ipv4_address: "192.168.2.6"
+        depends_on: 
+            - "load-balancer"
+        restart: "always"
+        environment: 
+            REACT_APP_API: "192.168.2.5/rest"
+
+#MYSQL 8 database
+    db:
+        container_name: "mysql"
+        build:
+            context: "./mysql"
+        image: "mysql-custom:1.0.0"
+        restart: "always"
+        ports: ["3306:3306"]
+        volumes: ["mysql-data:/var/lib/mysql"]
+        networks: 
+            red1:
+                ipv4_address: "192.168.2.2"
+
+
+#volumes 
+volumes: 
+    mysql-data:
+        driver: "local"
+    
+
+
+
+#network config
+networks: 
+
+    red1:
+        ipam: 
+            driver:  "default"
+            config: 
+                - subnet: "192.168.2.0/24"
+       
+        
+

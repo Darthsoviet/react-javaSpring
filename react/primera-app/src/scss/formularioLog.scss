@@ -1,0 +1,94 @@
+@mixin formularioLog($color1,$color2,$color3,$accept,$warnin,$accept-hover) {
+
+  .modal {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    z-index: 1;
+ 
+    
+    
+    .modal-content {
+      
+      display: block;
+      z-index: 2;
+      margin: 12px auto; /* 15% from the top and centered */
+      border: 1px solid $warnin;
+      width: 50%;
+      background: $color1;
+      padding: 12px;
+      label{
+        display: block;
+        width: 100%;
+        text-align: center;
+
+      }
+      input{
+        margin: 15px auto;
+        width: 80%;
+        display: block;
+        background: transparent;
+        border: none;
+        outline: none;
+        border-bottom: $warnin solid 2px;
+        text-align: center;
+      }
+      input::placeholder{
+        text-align: center;
+      }
+      .cancel-log{
+        background-color: transparent;
+
+        display: block;
+        border-radius: 2px;
+        color: $warnin;
+        padding: 2px;
+        margin: 10px auto;
+        width: 30%;
+        -webkit-appearance: none;
+        border: solid 1px $warnin;
+        transition: all .2s;
+        &:hover{
+          color: white;
+          background: $warnin;
+        }
+
+      }
+      button[type=submit]{
+        background: transparent;
+        display: block;
+        width: 30%;
+        margin: 10px auto;
+        border:1px solid $accept;
+        outline: none;
+        border-radius: 2px;
+        padding: 3px;
+        color: $accept;
+        transition: all .2s;
+        &:hover{
+          color: white;
+          background: linear-gradient(to right,$accept,black,$accept);
+          background-size: 500%;
+          animation: fondo linear infinite 2s;
+        }
+        @keyframes fondo {
+          0%{
+            background-position:0%;
+            color: white;
+          }50%{
+            color: $accept;
+          }
+          100%{
+            color: white;
+            background-position: 100%;
+          }
+          
+        }
+      }
+    }
+  }
+
+}
