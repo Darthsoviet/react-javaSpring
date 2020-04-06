@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "./static/css/main.f42e05a3.chunk.css",
+    "main.js": "./static/js/main.f83c04d8.chunk.js",
+    "main.js.map": "./static/js/main.f83c04d8.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.3fc91fa2.js",
+    "runtime-main.js.map": "./static/js/runtime-main.3fc91fa2.js.map",
+    "static/js/2.2a5cbf9d.chunk.js": "./static/js/2.2a5cbf9d.chunk.js",
+    "static/js/2.2a5cbf9d.chunk.js.map": "./static/js/2.2a5cbf9d.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.5092863ba2e59018ca9bd413d0590cef.js": "./precache-manifest.5092863ba2e59018ca9bd413d0590cef.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.f42e05a3.chunk.css.map": "./static/css/main.f42e05a3.chunk.css.map",
+    "static/js/2.2a5cbf9d.chunk.js.LICENSE": "./static/js/2.2a5cbf9d.chunk.js.LICENSE",
+    "static/media/boat-logistic-transportation-deleivery-vehicle-ship-container-parcel-10-20541.png": "./static/media/boat-logistic-transportation-deleivery-vehicle-ship-container-parcel-10-20541.619a9c54.png",
+    "static/media/box-package-parcel-logistic-delivery-unpack-open-shipping-5-20583.png": "./static/media/box-package-parcel-logistic-delivery-unpack-open-shipping-5-20583.4cc9ac5f.png",
+    "static/media/css3-8-1175200.svg": "./static/media/css3-8-1175200.2ca88453.svg",
+    "static/media/git-16-1175195.svg": "./static/media/git-16-1175195.46d7a154.svg",
+    "static/media/html5-42-1175210.svg": "./static/media/html5-42-1175210.eb0bfe64.svg",
+    "static/media/java-58-1174951.svg": "./static/media/java-58-1174951.27c6b445.svg",
+    "static/media/javascript-24-1174950.svg": "./static/media/javascript-24-1174950.de79c8f1.svg",
+    "static/media/minimi.png": "./static/media/minimi.fede0b57.png",
+    "static/media/mysql-21-1174941.svg": "./static/media/mysql-21-1174941.c02ade79.svg",
+    "static/media/server.svg": "./static/media/server.81303c6e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3fc91fa2.js",
+    "static/js/2.2a5cbf9d.chunk.js",
+    "static/css/main.f42e05a3.chunk.css",
+    "static/js/main.f83c04d8.chunk.js"
+  ]
+}
