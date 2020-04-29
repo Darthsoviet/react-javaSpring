@@ -45,7 +45,7 @@ public class RestService {
    
     // ___________________________________________________________GET__/api/item________________________________________________________
 
-    @RequestMapping(value = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/api/item" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @CrossOrigin(allowCredentials = "true", allowedHeaders = "*", methods = { RequestMethod.DELETE, RequestMethod.POST,
         RequestMethod.GET, RequestMethod.OPTIONS, RequestMethod.PUT }, origins = "*")
     public ResponseEntity<List<Item>> getData() {
